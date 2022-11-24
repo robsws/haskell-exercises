@@ -85,7 +85,10 @@ Try to use local variables (either let-in or where) to implement this
 function.
 -}
 minmax :: Int -> Int -> Int -> Int
-minmax x y z = let mini = min [x,y,z], maxi = max [x,y,z] in maxi - mini
+minmax x y z = 
+    let mini = min [x,y,z], 
+        maxi = max [x,y,z]
+    in maxi - mini
 
 {- | Implement a function that takes a string, start and end positions
 and returns a substring of a given string from the start position to
@@ -102,7 +105,8 @@ start position can be considered as zero (e.g. substring from the
 first character) and negative end position should result in an empty
 string.
 -}
-subString start end str = error "TODO"
+subString :: Int -> Int -> String -> String
+subString start end str = 
 
 {- | Write a function that takes a String — space separated numbers,
 and finds a sum of the numbers inside this string.
