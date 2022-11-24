@@ -105,8 +105,12 @@ start position can be considered as zero (e.g. substring from the
 first character) and negative end position should result in an empty
 string.
 -}
-subString :: Int -> Int -> String -> string
-subString start end str = error "TODO"
+subString :: Int -> Int -> String -> String
+subString start end str
+    | end <= 0 = ""
+    | start < 0 = impl 0 end str
+    | otherwise = impl start end str
+    where impl start end str = take (end - start) (drop start str)
 
 {- | Write a function that takes a String — space separated numbers,
 and finds a sum of the numbers inside this string.
