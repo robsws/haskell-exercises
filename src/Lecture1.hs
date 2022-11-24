@@ -69,10 +69,6 @@ sumOfSquares x y = x^2 + y^2
 
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
-abs :: Int -> Int
-abs n
-    | n < 0 = -n
-    | otherwise = n
 
 lastDigit :: Int -> Int
 lastDigit n = (abs n) `mod` 10
