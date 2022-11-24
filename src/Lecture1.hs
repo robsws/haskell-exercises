@@ -55,7 +55,8 @@ Explanation: @sumOfSquares 3 4@ should be equal to @9 + 16@ and this
 is 25.
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
-sumOfSquares x y = error "TODO!"
+sumOfSquares :: (Num a) => a -> a -> a
+sumOfSquares x y = x^2 + y^2
 
 {- | Implement a function that returns the last digit of a given number.
 
@@ -68,7 +69,8 @@ sumOfSquares x y = error "TODO!"
 
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
-lastDigit n = error "lastDigit: Not implemented!"
+lastDigit :: Int -> Int
+lastDigit n = n `mod` 10
 
 {- | Write a function that takes three numbers and returns the
 difference between the biggest number and the smallest one.
@@ -82,7 +84,8 @@ and 1 is the smallest, and 7 - 1 = 6.
 Try to use local variables (either let-in or where) to implement this
 function.
 -}
-minmax x y z = error "TODO"
+minmax :: Int -> Int -> Int -> Int
+minmax x y z = let mini = min [x,y,z], maxi = max [x,y,z] in maxi - mini
 
 {- | Implement a function that takes a string, start and end positions
 and returns a substring of a given string from the start position to
