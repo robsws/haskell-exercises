@@ -136,4 +136,16 @@ and lower than 6 elements (4, 5, 6, 7, 8 and 9).
 
 🕯 HINT: Use recursion to implement this function.
 -}
-lowerAndGreater n list = error "TODO"
+lowerAndGreater :: Int -> [Int] -> String
+lowerAndGreater n list = 
+    let (lt, gt) = lowerAndGreater' n list
+    in show n ++ " is greater than " ++ show lt ++ " elements and lower than " ++ show gt ++ " elements"
+
+lowerAndGreater' :: Int -> [Int] -> (Int, Int)
+lowerAndGreater' n [] = (0, 0)
+lowerAndGreater' n list
+    | n > h = (lt + 1, gt)
+    | n < h = (lt, gt + 1)
+    | otherwise = (lt, gt)
+    where h = head list
+          (lt, gt) = lowerAndGreater' n (tail list)
