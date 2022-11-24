@@ -69,7 +69,6 @@ sumOfSquares x y = x^2 + y^2
 
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
-
 lastDigit :: Int -> Int
 lastDigit n = (abs n) `mod` 10
 
@@ -108,10 +107,10 @@ string.
 -}
 subString :: Int -> Int -> String -> String
 subString start end str
-    | end <= 0 = ""
+    | end < 0 = ""
     | start < 0 = impl 0 end str
     | otherwise = impl start end str
-    where impl start end str = take (end - start) (drop start str)
+    where impl start end str = take (1 + end - start) (drop start str)
 
 {- | Write a function that takes a String — space separated numbers,
 and finds a sum of the numbers inside this string.
