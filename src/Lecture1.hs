@@ -86,8 +86,8 @@ function.
 -}
 minmax :: Int -> Int -> Int -> Int
 minmax x y z = 
-    let mini = min [x,y,z], 
-        maxi = max [x,y,z]
+    let mini = minimum [x,y,z]
+        maxi = maximum [x,y,z]
     in maxi - mini
 
 {- | Implement a function that takes a string, start and end positions
@@ -105,8 +105,8 @@ start position can be considered as zero (e.g. substring from the
 first character) and negative end position should result in an empty
 string.
 -}
-subString :: Int -> Int -> String -> String
-subString start end str = 
+subString :: Int -> Int -> String -> string
+subString start end str = error "TODO"
 
 {- | Write a function that takes a String — space separated numbers,
 and finds a sum of the numbers inside this string.
